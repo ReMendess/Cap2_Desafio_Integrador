@@ -1,121 +1,155 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css";
+import { BrowserRouter, Navigate, NavLink, Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import { AreaRestrita } from "./hooks-examples/AreaRestrita";
+import { PainelLogin } from "./hooks-examples/PainelLogin";
+import Dashboard from "./pages/Dashboard";
+import Patients from "./pages/Patients";
+import Schedule from "./pages/Schedule";
 
-function App() {
-  const [count, setCount] = useState(0)
+function AuthGate() {
+  const { usuario, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="appShell">
+        <div className="card">
+          <header className="cardHeader">
+            <div className="brand">
+              <h1 className="brandTitle">Portal Médico</h1>
+              <p className="brandSubtitle">Acesso seguro • Atendimento • Prontuários</p>
+            </div>
+            <div className="badge">
+              <span className="badgeDot" />
+              Sistema online
+            </div>
+          </header>
+          <main className="content">
+            <section className="panel">
+              <h2 className="panelTitle">Carregando</h2>
+              <p>Verificando sessão...</p>
+            </section>
+          </main>
+        </div>
+      </div>
+    );
+  }
+
+  if (usuario) return <Navigate to="/dashboard" replace />;
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="appShell">
+      <div className="card">
+        <header className="cardHeader">
+          <div className="brand">
+            <h1 className="brandTitle">Portal Médico</h1>
+            <p className="brandSubtitle">Acesso seguro • Atendimento • Prontuários</p>
+          </div>
+          <div className="badge">
+            <span className="badgeDot" />
+            Sistema online
+          </div>
+        </header>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <main className="cardBody">
+          <PainelLogin />
+          <AreaRestrita />
+        </main>
+      </div>
+    </div>
+  );
 }
 
-export default App
+function AppLayout({ children, title }) {
+  const { usuario, logout } = useAuth();
+
+  return (
+    <div className="appShell">
+      <div className="card">
+        <header className="topbar">
+          <div className="brand">
+            <div className="brandTitle">Portal Médico</div>
+            <div className="brandSubtitle">
+              {title ? title : "Área clínica"}
+              {usuario ? ` • ${usuario.nome}` : ""}
+            </div>
+          </div>
+
+          <nav className="nav" aria-label="Navegação">
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => `navLink ${isActive ? "navLinkActive" : ""}`}
+            >
+              Dashboard
+            </NavLink>
+            <NavLink
+              to="/patients"
+              className={({ isActive }) => `navLink ${isActive ? "navLinkActive" : ""}`}
+            >
+              Pacientes
+            </NavLink>
+            <NavLink
+              to="/schedule"
+              className={({ isActive }) => `navLink ${isActive ? "navLinkActive" : ""}`}
+            >
+              Agenda
+            </NavLink>
+            <button type="button" className="logoutBtn" onClick={logout}>
+              Sair
+            </button>
+          </nav>
+        </header>
+
+        <main className="content">{children}</main>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AuthGate />} />
+
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <AppLayout title="Visão geral">
+                  <Dashboard />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/patients"
+            element={
+              <ProtectedRoute>
+                <AppLayout title="Pacientes">
+                  <Patients />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/schedule"
+            element={
+              <ProtectedRoute>
+                <AppLayout title="Agenda">
+                  <Schedule />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
+
+export default App;
