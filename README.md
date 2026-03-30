@@ -22,25 +22,7 @@ Nessa segunda fase desenvolvendo ferramentas que automatizam a triagem e o diagn
 
 Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemos e treinamos um modelo de visão computacional para a análise de exames de eletrocardiograma.
 
-# Links:
-
-## Requisitos
-#### Ambiente
-Node.js 20.x ou 22.x LTS (recomendado para Vite 8) + npm
-Python 3.10–3.12 
-Portal web: Node 20/22, React 19, Vite 8, React Router 7. 
-Notebook: Python 3.10–12, pip install -r requirements.txt (pandas, scikit-learn, numpy, JupyterLab).
-
-#### Versões 
-react ^19.2.4
-react-dom ^19.2.4
-react-router-dom ^7.13.2
-
-pandas 2.1
-scikit-learn 1.4
-numpy 1.26
-jupyterlab 4 
-
+# Links Videos:
 
 
 ### Parte 1
@@ -56,7 +38,7 @@ Através de buscas por palavras-chave e expressões comuns (ex: "aperto no tóra
  
 <img src="assets/arquivo_txt.png" widht="150">
 
-O código em python "Criar_Dados.py" cria uma base de dados simulado em CSV "mapa_sintomas_doencas.csv", seguindo uma estrutura onde o individuo apresenta até dois sintomas, intensidade, duração e uma doença passada na qual já foi diagnosticado.
+O código em python "Criar_Dados.py" cria uma base de dados simulado em CSV "mapa_sintomas_doencas.csv", seguindo uma estrutura de colunas, onde foram registrados dois sintomas, intensidade, duração e uma doença passada na qual já foi diagnosticado.
 
 
 <img src="assets/criar_dados.png" widht="150">
@@ -71,6 +53,26 @@ Por fim criamos um programa "Visualizar_Ontologia" para visualizar a ontologia c
 
 ### Parte 2
 
+Agora utilizando processamento de texto com TF-IDF (Term Frequency-Inverse Document Frequency) para converter relatos médicos em vetores numéricos. Seguindo uma abordagem mais tradicional, voltada a estatistica e probabilidade, treinamos um algoritmo de Machine Learning (Scikit-learn) para classificar os pacientes entre "Baixo Risco" e "Alto Risco", permitindo uma triagem rápida e eficiente baseada na gravidade dos sintomas.
+
+#### Como funciona:
+
+Criamos outro programa python "Gerar_Dataset.py" para gerar um novo arquivo csv "frases_risco.csv". Esse novo dataset é necessário pois descreve de forma mais textual e natural do que o dataset usado na parte 1.
+
+<img src="assets/gerar_dataset.png" widht="150">
+
+Em seguida no notebook python "Classificador_TF_IDF.ipynb" vetorizamos o texto (arquivo csv) com TF-IDF e treinamos dois modelos diferentes. Um de Regressão Logística e uma Árvore de Decisão.
+
+<img src="assets/modelos.png" widht="150">
+
+Seguimos então para a avalição dos modelos, obtivemos bons resultados do modelo de regressão logística com uma acurácia de 83% apesar da pequena quantidade de dados e sem realizar uma hiper-parametrização. Por outro lado o modelo de árvore de decisão teve uma acurácia de apenas 63% não conseguindo classificar com sucesso os diagnósticos.
+
+<img src="assets/avaliacao_modelos.png" widht="150">
+
+Usando o melhor modelo, de regressão logística, testamos com 4 novas frases o classificador de diagnósticos.
+O resultado foi coerente, classificando as frases de "Alto Risco" de forma acertiva.
+
+<img src="assets/teste_modelo_Logis_Regre.png" widht="150">
 
 ### Ir Além
 
@@ -88,5 +90,19 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
   
 - <b>assets</b>: Imagens relevantes para documentação desse repositório.
   
+## Requisitos
+#### Ambiente
+- Node.js 20.x ou 22.x LTS (recomendado para Vite 8) + npm
+- Python 3.10–3.12 
+- Portal web: Node 20/22, React 19, Vite 8, React Router 7. 
+- Notebook: Python 3.10–12, pip install -r requirements.txt (pandas, scikit-learn, numpy, JupyterLab).
 
+#### Versões 
+- react 19.2.4
+- react-dom 19.2.4
+- react-router-dom 7.13.2
+- pandas 2.1
+- scikit-learn 1.4
+- numpy 1.26
+- jupyterlab 4 
 
