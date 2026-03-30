@@ -13,7 +13,7 @@ function AuthGate() {
 
   if (loading) {
     return (
-      <div className="appShell">
+      <div className="appShell appShell--landing">
         <div className="card">
           <header className="cardHeader">
             <div className="brand">
@@ -39,7 +39,7 @@ function AuthGate() {
   if (usuario) return <Navigate to="/dashboard" replace />;
 
   return (
-    <div className="appShell">
+    <div className="appShell appShell--landing">
       <div className="card">
         <header className="cardHeader">
           <div className="brand">

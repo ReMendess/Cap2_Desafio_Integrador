@@ -4,7 +4,7 @@ from os import sep
 # Caminho do arquivo
 arquivo_csv = "C:\\Users\\Pichau\\OneDrive\\Área de Trabalho\\Cap2_Desafio_Integrador\\Parte_1\\mapa_sintomas_doencas.csv"
 
-# Estrutura: Sintoma 1 | Sintoma 2 | Intensidade | Duração | Doença Associada
+# Estrutura: Sintoma 1 | Sintoma 2 | Intensidade | Duração | Doença Passada
 dados = [
     ["dor no peito", "aperto no tórax", "alta", "2 dias", "Infarto"],
     ["dor no peito ao esforço", "pressão no peito", "média", "1 semana", "Angina"],
