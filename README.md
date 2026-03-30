@@ -76,19 +76,45 @@ O resultado foi coerente, classificando as frases de "Alto Risco" de forma acert
 
 ### Ir Além
 
+Criamos do zero uma interface web completa responsiva para a gestão da clínica cardiológica.
+Utilizamos: React + Vite + Styled Components/CSS Modules.
+
+<img src="assets/Login.png" widht="150">
+
+Dentre as Funcionalidades: 
+- Gerenciamento de estado global com Context API.
+- Autenticação simulada com persistência via LocalStorage.
+- Consumo de dados via API fake para listagem de pacientes.
+- Dashboards dinâmicos com métricas de agendamento e saúde.
+
+Usando Context e diversos hooks e componentes, criamos 4 paginas
+
+<img src="assets/pages.png" widht="150">
+<img src="assets/AuthContext.png" widht="150">
+
+De forma dinamica e simulada é possível realizar um login com autenticação, ver a lista de pacientes e marcar uma consulta.
+
+<img src="assets/Portal.png" widht="150">
+<img src="assets/agendamento.png" widht="150">
+
+
 ### Ir Além 2
 
 # 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- <b>Dataset</b>: Nesta pasta está o arquivo .CSV escolhido, representando os dados númericos.
-
-- <b>Imagens</b>: Aqui estão as 200 imagens de Raio-x do toráx e o programa "Cap1_Dados_Imagens_Selecao.ipynb" usado para selecionar essas imagens.
-
-- <b>Textos</b>: Aqui estão os textos escolhidos para treinamento de um modelo NLP.
-  
 - <b>assets</b>: Imagens relevantes para documentação desse repositório.
+
+- <b>Ir_Alem</b>: Interface e todo código React + Vite.
+
+- <b>Ir_Alem_2</b>: Notebook python com o modelo MLP para visão computacional.
+
+- <b>Parte_1</b>: Arquivo txt, csv e código Python referentes ao classificador NPL baseado em regras e mapa ontologico criado.
+
+- <b>Parte_2</b>: Arquivo csv e programa Python classificador NPL probabilistico, usando TF_IDF.
+  
+
   
 ## Requisitos
 #### Ambiente
