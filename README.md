@@ -32,18 +32,18 @@ Através de buscas por palavras-chave e expressões comuns (ex: "aperto no tóra
 
 #### Como funciona:
 
- O sistema lê o arquivo de texto "sintomas_pacientes.txt" que tem descrições de sintomas e utiliza uma estrutura de mapeamento para identificar padrões semânticos.
+O código em python "Criar_Dados.py" cria uma base de dados simulado em CSV "mapa_sintomas_doencas.csv", seguindo uma estrutura de colunas, onde foram registrados dois sintomas, intensidade, duração e uma doença sugerida.
+
+ O sistema lê o arquivo csv criado "mapa_sintomas_doecas.csv" que tem os sintomas e utiliza uma estrutura de mapeamento para identificar padrões semânticos, criando um mapa de palavras e relacionamento entre elas.
  
- Como visto em aula, essa estratégia é baseada em regras, utilizando análises léxica, morfológica e sintática para compreender o texto.
- 
+
 <img src="assets/arquivo_txt.png" widht="150">
 
-O código em python "Criar_Dados.py" cria uma base de dados simulado em CSV "mapa_sintomas_doencas.csv", seguindo uma estrutura de colunas, onde foram registrados dois sintomas, intensidade, duração e uma doença passada na qual já foi diagnosticado.
-
+ Como visto em aula, essa estratégia é baseada em regras, utilizando análises léxica, morfológica e sintática para compreender o texto.
 
 <img src="assets/criar_dados.png" widht="150">
 
-O programa "Identificar_sintomas.py" utiliza o arquivo .txt como base, cria uma ontologia com ele. Pega o arquivo csv e faz um mapeamento. Conforme encontra palavras e frases semelhantes, ele realiza um diagnóstico para paciente e registro dentro do arquivo csv.
+O programa "Identificar_sintomas.py" utiliza o arquivo "sintomas_pacientes.txt" como entrada nova. Pega o arquivo csv e faz uma comparação e classificação. Conforme encontra palavras e frases semelhantes, ele realiza um diagnóstico para o paciente.
 
 <img src="assets/identificar_sintomas.png" widht="150">
 
