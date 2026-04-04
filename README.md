@@ -36,14 +36,16 @@ O código em python "Criar_Dados.py" cria uma base de dados simulado em CSV "map
 
  O sistema lê o arquivo csv criado "mapa_sintomas_doecas.csv" que tem os sintomas e utiliza uma estrutura de mapeamento para identificar padrões semânticos, criando um mapa de palavras e relacionamento entre elas.
  
+ <img src="assets/criar_dados.png" widht="150">
 
-<img src="assets/arquivo_txt.png" widht="150">
 
  Como visto em aula, essa estratégia é baseada em regras, utilizando análises léxica, morfológica e sintática para compreender o texto.
 
-<img src="assets/criar_dados.png" widht="150">
 
 O programa "Identificar_sintomas.py" utiliza o arquivo "sintomas_pacientes.txt" como entrada nova. Pega o arquivo csv e faz uma comparação e classificação. Conforme encontra palavras e frases semelhantes, ele realiza um diagnóstico para o paciente.
+
+<img src="assets/arquivo_txt.png" widht="150">
+
 
 <img src="assets/identificar_sintomas.png" widht="150">
 
