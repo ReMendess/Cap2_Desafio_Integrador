@@ -24,6 +24,7 @@ Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemo
 
 # Links Videos:
 ### Parte 1 e Parte 2: https://youtu.be/x02ARFNEPwI
+### Ir Além: https://youtu.be/Ef4Oz--yt_8
 
 
 ### Parte 1
