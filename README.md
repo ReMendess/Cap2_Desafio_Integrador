@@ -18,11 +18,12 @@
 
 
 # Descrição
-Nessa segunda fase desenvolvendo ferramentas que automatizam a triagem e o diagnóstico médico por meio de Processamento de Linguagem Natural (NLP) e Machine Learning. Utilizamos duas técnicas em NLP, baseado em regras e estátistico.
+Nessa segunda fase desenvolvendo ferramentas que automatizam a triagem e o diagnóstico médico por meio de Processamento de Linguagem Natural (NLP) e Machine Learning. Utilizamos duas técnicas em NLP, baseado em regras e estatístico.
 
 Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemos e treinamos um modelo de visão computacional para a análise de exames de eletrocardiograma.
 
 # Links Videos:
+### Parte 1 e Parte 2: https://youtu.be/x02ARFNEPwI
 
 
 ### Parte 1
