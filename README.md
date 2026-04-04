@@ -10,14 +10,14 @@
 
 ## Nome do grupo
 
-# 👨‍🎓 Integrantes: 
+# Integrantes: 
 - <a href="https://www.linkedin.com/in/renanmendes26/">Renan de Oliveira Mendes - RM563145</a>
 - <a href="https://www.linkedin.com/in/ricaleone/">Ricardo Batah Leone - RM563382</a>
 - <a href="https://www.linkedin.com/in/yuki-watanabe-kuramoto-858856146/">Yuki Watanabe Kuramoto  - RM565164</a>
 - <a href="https://br.linkedin.com/in/rodrigoreinaux/">Rodrigo De Melo Reinaux Porto  - RM564242</a>
 
 
-# 📜 Descrição
+# Descrição
 Nessa segunda fase desenvolvendo ferramentas que automatizam a triagem e o diagnóstico médico por meio de Processamento de Linguagem Natural (NLP) e Machine Learning. Utilizamos duas técnicas sw NLP, baseado em regras e estátistico.
 
 Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemos e treinamos um modelo de visão computacional para a análise de exames de eletrocardiograma.
