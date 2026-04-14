@@ -20,7 +20,7 @@
 # Descrição
 Nessa segunda fase desenvolvendo ferramentas que automatizam a triagem e o diagnóstico médico por meio de Processamento de Linguagem Natural (NLP) e Machine Learning. Utilizamos duas técnicas em NLP, baseado em regras e estatístico.
 
-Indo além, criamos uma interface moderna com React e Vite. Também desenvolvemos e treinamos um modelo de visão computacional para a análise de exames de eletrocardiograma.
+Indo além, criamos uma interface moderna com React e Vite.
 
 # Links Videos:
 ### Parte 1 e Parte 2: https://youtu.be/x02ARFNEPwI
@@ -102,8 +102,6 @@ De forma dinamica e simulada é possível realizar um login com autenticação, 
 <img src="assets/agendamento.png" widht="150">
 
 
-### Ir Além 2
-
 # 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
@@ -111,8 +109,6 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 - <b>assets</b>: Imagens relevantes para documentação desse repositório.
 
 - <b>Ir_Alem</b>: Interface e todo código React + Vite.
-
-- <b>Ir_Alem_2</b>: Notebook python com o modelo MLP para visão computacional.
 
 - <b>Parte_1</b>: Arquivo txt, csv e código Python referentes ao classificador NPL baseado em regras e mapa ontologico criado.
 
